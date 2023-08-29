@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Summary</title>
+</head>
+
+<body>
+
+    <p id="inText">defalt text</p>
+    <input id="infield" type="text">
+    <button id="btnupdate">update</button>
+    <br><br><br>
+
+    <h1 onclick="console.log('h1')">FINAL DOM EVENT HANDLER</h1>
+
+
+    <h3 id="TextChange">Defalt Text</h3>
+    <button onclick="handelonclick()">Handel event by add onclick function</button>
+
+    <button id="EventListener">Handel event by addEventListener</button>
+
+
+    <script>
+        ////
+        document.getElementById('btnupdate').addEventListener('click', function () {
+            const infield = document.getElementById('infield')
+            const inText = infield.value
+            const w = document.getElementById('inText')
+            w.innerText = inText
+            infield.value = ''
+
+        })
+
+        function handelonclick() {
+            // console.log('button cliked')
+            const handlerstatus = document.getElementById('TextChange')
+            handlerstatus.innerText = 'handle by fun attached on onclick attribute'
+
+        }
+        //
+        document.getElementById('EventListener').addEventListener('click', function () {
+            const handlerstatus = document.getElementById('TextChange')
+            handlerstatus.innerText = 'Text Update by add event listener button'
+        })
+    </script>
+
+</body>
+
+</html>

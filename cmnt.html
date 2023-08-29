@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new comment</title>
+</head>
+
+<body>
+    <h1>please add your comment</h1>
+
+    <div id="cmntcontainer">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ducimus non odio tempore perferendis. Est maxime
+            tenetur necessitatibus, iste in sunt quas nemo laboriosam, animi aperiam repellat, rem quod non?</p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ducimus non odio tempore perferendis. Est maxime
+            tenetur necessitatibus, iste in sunt quas nemo laboriosam, animi aperiam repellat, rem quod non?</p><br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem ducimus non odio tempore perferendis. Est maxime
+            tenetur necessitatibus, iste in sunt quas nemo laboriosam, animi aperiam repellat, rem quod non?</p><br>
+
+    </div>
+    <div>
+        <textarea name="" id="newcmnt" cols="60" rows="4"></textarea><br>
+        <button id="btnpost">post</button>
+    </div>
+
+    <script>
+        //step 1 add event listener to the post btn 
+        document.getElementById('btnpost').addEventListener('click', function () {
+            //  console.log('click')
+            //step 2 get the cmnt
+            const cmntbox = document.getElementById('newcmnt')
+            const newcmntw = cmntbox.value
+            //step 3 set the cmnt inside the cmnt container
+            const cmntcontainer = document.getElementById('cmntcontainer')
+            const p = document.createElement('p')
+            cmntcontainer.appendChild(p)
+            p.innerText = newcmntw
+            cmntbox.value = ''
+
+
+
+
+
+
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>babul er vai deloyer</title>
+</head>
+
+<body>
+    <h1>Explore delegate</h1>
+    <section>
+        <ul id="licontainer">
+            <li class="item">Lorem, ipsum dolor.</li>
+            <li class="item">Explicabo, eaque rem.</li>
+            <li class="item">Voluptates, molestiae qui.</li>
+            <li class="item">Architecto, adipisci culpa.</li>
+        </ul>
+        <button id="add">add item</button>
+    </section>
+
+    <script>
+        const items = document.getElementsByClassName('item')
+        for (const item of items) {
+            item.addEventListener('click', function (event) {
+                console.log(item)
+                console.log(event.target.innerText)
+                console.log(event.target.parentNode)
+                event.target.parentNode.removeChild(event.target)
+
+            })
+        }
+
+
+
+        document.getElementById('licontainer').addEventListener('click', function (event) {
+            event.target.parentNode.removeChild(event.target)
+        })
+
+
+
+
+
+        document.getElementById('add').addEventListener('click', function () {
+            const licontainer = document.getElementById('licontainer')
+            const li = document.createElement('li')
+            li.innerText = 'new item added'
+            li.classList.add('item')
+            licontainer.appendChild(li)
+
+        })
+    </script>
+</body>
+
+</html>
